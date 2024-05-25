@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.clear {
+    clear: both;
+}
+
+.text-center {
+    margin-top: 24px;
+    margin-left: 48px;
+}
+
+#header {
+    height: 80px;
+    background: #000;
+    text-align: center;
+}
+
+#header .logo-UTE {
+    height: 100%;
+    float: left;
+    
+}
+
+#header .first-heading {
+    display: inline-block;
+    color: #fff;
+    font-size: 48px;
+    line-height: 80px;
+}
+
+#nav {
+    padding: 12px;
+    text-align: center;
+    background: #ccc;
+}
+
+#nav button {
+    margin-left: 24px;
+    padding: 12px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#time {
+    font-size: 20px;
+    font-family: Tahoma;
+    text-align: center;
+    margin-top: 12px;
+}
+
+#contents #main-contents  {
+    min-height: 500px;
+    padding: 12px 24px;
+    margin-top: 24px;
+    /* margin-left: 10%; */
+    background-image: url('/assets/img/background1.png');
+    width: 65%;
+    float: right;
+}
+
+
+#button-slider-on-off { 
+    height: 798px;
+    width: 35%;
+    float: left;
+    padding: 12px 24px;
+    margin-top: 24px;
+    background-image: url('/assets/img/background1.png');
+}
+
+#contents .parameters {
+    padding: 24px;
+    font-weight: 550;
+}
+
+#button-slider-on-off button {
+    font-size: 20px;
+    padding: 12px 48px;
+    font-weight: 550;
+    margin-left: 64px; 
+}
+
+#contents #control {
+    padding: 24px;
+    width: 100%;
+    margin-left: 5%;
+    font-size: 20px;
+}
+
+#contents .parameters img {
+    height: 160px; 
+    width: 160px;
+}
+
+#contents .parameters #temp {
+    float: left;
+    margin-left: 180px;
+}
+
+#contents .parameters #humidity {
+    float: right;
+    margin-right: 180px;
+}
+
+#contents .parameters div {
+    margin-top: 32px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#control .control-1 img {
+    width: 160px;
+    height: 160px;
+    /* margin-right: 12px; */
+}
+
+#control .control-1 {
+    display: inline-block;
+    padding: 24px;
+    width: 24.5%; 
+}
+
+/* #control .control-1 .button-control {
+    margin: auto;
+} */
+
+#control button {
+    font-size: 20px;
+    padding: 12px 16px;
+    font-weight: 550;
+    margin-left: 16px;
+}
+
+
+#footer {
+    background: #ccc;
+    width: 80%;
+    margin-left: 10%;
+    /* text-align: center; */
+    font-size: 16px;
+    padding: 12px 24px;
+}
+
+#footer ul li {
+    list-style-type: none;
+}
+
+#footer .footer-name {
+    padding: 16px 24px;
+}
+
+
+/* toogle button */
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #000;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  #contents #button-slider-on-off #toggle-button {
+    margin: 180px;
+  }
+
+
+.slidecontainer {
+    /* margin: 150px; */
+    margin: 20%;
+}
+.slidecontainer input {
+    width: 100%; 
+}

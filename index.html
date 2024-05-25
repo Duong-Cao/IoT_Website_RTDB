@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Smart Home</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <img src="./assets/img/logoHCMUTE.png" alt="logoHCMUTE" class="logo-UTE">
+            <h1 class="first-heading">Smart Home</h1>
+        </div>
+        <div class="clear"></div>
+        <div id="nav">
+            <button class="btn-living-room"><b>Living Room</b></button>
+            <button class="btn-kitchen"><b>Kitchen</b></button>
+            <button class="btn-bed"><b>Bed Room</b></button>
+            <button class="btn-garden"><b>Garden</b></button>
+        </div>
+
+        <div id="contents">
+            <div id="button-slider-on-off">
+                <div class="button-on-off">
+                    <button type="button" id="btn9">On</button>
+                    <button type="button" id="btn10">Off</button>
+                </div>
+
+
+                <div id="toggle-button">
+                    <!-- Rounded switch -->
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="50">
+                </div>
+            </div>
+
+            <div id="main-contents">
+
+                <div id="control">
+                    <div class="control-1">
+                        <img src="./assets/img/call1.png" alt="SOS" id="call">
+                        <div class="button-control">
+                            <button type="button" id="btn1">On</button>
+                            <button type="button" id="btn2">Off</button>
+                            <div class="text-center"><b>SOS</b></div>
+                        </div>
+
+                    </div>
+                    <div class="control-1">
+                        <img src="./assets/img/den1.png" alt="Light" id="den">
+                        <div class="button-control">
+                            <button type="button" id="btn3">On</button>
+                            <button type="button" id="btn4">Off</button>
+                            <div class="text-center"><b>Light</b></div>
+                        </div>
+                    </div>
+                    <div class="control-1">
+                        <img src="./assets/img/air1.png" alt="Air" id="dieuhoa">
+                        <div class="button-control">
+                            <button type="button" id="btn5">On</button>
+                            <button type="button" id="btn6">Off</button>
+                            <div class="text-center"><b>Air Condition</b></div>
+                        </div>
+                    </div>
+                    <div class="control-1">
+                        <img src="./assets/img/loa1.png" alt="Loa" id="loa">
+                        <div class="button-control">
+                            <button type="button" id="btn7">On</button>
+                            <button type="button" id="btn8">Off</button>
+                            <div class="text-center"><b>Speaker</b></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="parameters">
+                    <div id="temp">
+                        <img src="./assets/img/temp1.png" alt="Temp" id="temp1">
+                        <div><b>Temperature</b></div>
+                        <div id="nhietdo"></div>
+                    </div>
+
+                    <div id="humidity">
+                        <img src="./assets/img/humidity1.png" alt="Humidity" id="humidity1">
+                        <div><b>Humidity</b></div>
+                        <div id="doam"></div>
+                    </div>
+
+                    <div id="noise">
+                        <img src="./assets/img/noise.png" alt="Noise" id="noise1">
+                        <div><b>Noises</b></div>
+                        <div id="tiengon"></div>
+                    </div>
+                    <!-- 
+                    <div class="parameters-js">
+                        <div id="nhietdo"></div>
+                        <div id="tiengon"></div>
+                        <div id="doam"></div>
+                    </div> -->
+                </div>
+                <hr>
+
+                <div id="time"></div>
+                <script>
+                    function dongho() {
+                        var time = new Date();
+                        var gio = time.getHours();
+                        var phut = time.getMinutes();
+                        var giay = time.getSeconds();
+                        if (gio < 10)
+                            gio = "0" + gio;
+                        if (phut < 10)
+                            phut = "0" + phut;
+                        if (giay < 10)
+                            giay = "0" + giay;
+                        document.getElementById("time").innerHTML = "<b>Time: </b>" + gio + ":" + phut + ":" + giay;
+                        setTimeout("dongho()", 1000);
+                    };
+                    dongho();
+                </script>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+
+        <div id="footer">
+            <p><b>IoT Lab:</b></p>
+            <ul class="footer-name">
+                <li>Cao The Duong - 21142452</li>
+            </ul>
+            <p><b>Lecturer:</b> Truong Quang Phuc</p>
+        </div>
+    </div>
+
+    <!-- Begin: Firebase init -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyC3aMIMpwXOaIux7199R0i3Ja9xpYm1Mcs",
+            authDomain: "fir-prj-f4091.firebaseapp.com",
+            databaseURL: "https://fir-prj-f4091-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "fir-prj-f4091",
+            storageBucket: "fir-prj-f4091.appspot.com",
+            messagingSenderId: "183019445160",
+            appId: "1:183019445160:web:cf13e4ad4cfe5c6c65db9d",
+            measurementId: "G-PG0L2HF0E4"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+    <!-- End Firebase init -->
+
+    <script type="module" src="function.js"></script>
+    <script type="module">
+        import { getDatabase, ref, push, set, onValue } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+
+        const db = getDatabase();
+        var nhietDo = document.getElementById('nhietdo');
+        var tiengOn = document.getElementById('tiengon');
+        var doAm = document.getElementById('doam');
+
+        // console.log(nhietDo);
+        // console.log(tiengOn);
+        // console.log(doAm);
+
+        var dbRef1 = ref(db, 'living_room/Nhietdo');
+        var dbRef2 = ref(db, 'living_room/Tiengon');
+        var dbRef3 = ref(db, 'living_room/Doam');
+
+        var dbRef4 = ref(db, 'kitchen/Nhietdo');
+        var dbRef5 = ref(db, 'kitchen/Tiengon');
+        var dbRef6 = ref(db, 'kitchen/Doam');
+
+        var dbRef7 = ref(db, 'bed_room/Nhietdo');
+        var dbRef8 = ref(db, 'bed_room/Tiengon');
+        var dbRef9 = ref(db, 'bed_room/Doam');
+
+        var dbRef10 = ref(db, 'garden/Nhietdo');
+        var dbRef11 = ref(db, 'garden/Tiengon');
+        var dbRef12 = ref(db, 'garden/Doam');
+
+
+        const btnLivingRoom = document.querySelector('.btn-living-room');
+        const btnKitchen = document.querySelector('.btn-kitchen');
+        const btnBed = document.querySelector('.btn-bed');
+        const btnGarden = document.querySelector('.btn-garden');
+
+        function func_living() {
+            onValue(dbRef1, (snapshot) => {
+                nhietDo.innerText = snapshot.val();
+            });
+
+            // Listen for changes on the database reference 'living_room/Doam'
+            onValue(dbRef2, (snapshot) => {
+                tiengOn.innerText = snapshot.val();
+            });
+
+            // Listen for changes on the database reference 'living_room/Luongmua'
+            onValue(dbRef3, (snapshot) => {
+                doAm.innerText = snapshot.val();
+            });
+        }
+        btnLivingRoom.addEventListener('click', func_living)
+
+        function func_kitchen() {
+            onValue(dbRef4, (snapshot) => {
+                nhietDo.innerText = snapshot.val();
+            });
+
+            onValue(dbRef5, (snapshot) => {
+                tiengOn.innerText = snapshot.val();
+            });
+
+            onValue(dbRef6, (snapshot) => {
+                doAm.innerText = snapshot.val();
+            });
+        }
+        btnKitchen.addEventListener('click', func_kitchen);
+
+        function func_bed() {
+            onValue(dbRef7, (snapshot) => {
+                nhietDo.innerText = snapshot.val();
+            });
+
+            onValue(dbRef8, (snapshot) => {
+                tiengOn.innerText = snapshot.val();
+            });
+
+            onValue(dbRef9, (snapshot) => {
+                doAm.innerText = snapshot.val();
+            });
+        }
+        btnBed.addEventListener('click', func_bed);
+
+        function func_garden() {
+            onValue(dbRef10, (snapshot) => {
+                nhietDo.innerText = snapshot.val();
+            });
+
+            onValue(dbRef11, (snapshot) => {
+                tiengOn.innerText = snapshot.val();
+            });
+
+            onValue(dbRef12, (snapshot) => {
+                doAm.innerText = snapshot.val();
+            });
+        }
+        btnGarden.addEventListener('click', func_garden);
+    </script>
+</body>
+
+</html>
